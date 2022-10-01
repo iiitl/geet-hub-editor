@@ -104,6 +104,18 @@ const AudioWaveform = () => {
 		}
 	}, [duration, wavesurferObj]);
 
+	function handleToggle(isDual) {
+		if (isDual) {
+			console.log(wavesurferObj.getFilters());
+			let channelSplitter = wavesurferObj.backend.ac.createChannelSplitter(2);
+			wavesurferObj.backend.setFilter(channelSplitter);
+		} else {
+			console.log(wavesurferObj.getFilters());
+			let channelMerger = wavesurferObj.backend.ac.createChannelMerger();
+			wavesurferObj.backend.setFilter(channelMerger);
+		}
+	}
+
 	const handlePlayPause = (e) => {
 		wavesurferObj.playPause();
 		setPlaying(!playing);
@@ -203,7 +215,7 @@ const AudioWaveform = () => {
 			<div ref={timelineRef} id='wave-timeline' />
 			<div className='all-controls'>
 				<div className='left-container'>
-					<ToggleButton />
+					<ToggleButton onChange={handleToggle} />
 					<button
 						title='play/pause'
 						className='controls'
