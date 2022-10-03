@@ -9,6 +9,7 @@ import { saveData, bufferToWave } from "../Utils/helper";
 const AudioWaveform = () => {
 	const wavesurferRef = useRef(null);
 	const timelineRef = useRef(null);
+	const [durationinsec,setDurationInSec]=useState(0);
 
 	// fetch file url from the context
 	const { fileURL, setFileURL } = useContext(FileContext);
@@ -60,6 +61,10 @@ const AudioWaveform = () => {
 				wavesurferObj.play();
 				wavesurferObj.enableDragSelection({}); // to select the region to be trimmed
 				setDuration(Math.floor(wavesurferObj.getDuration())); // set the duration in local state
+				let x=wavesurferObj.getDuration();
+				let y=Math.round(x * 100) / 100
+				setDurationInSec(y);
+
 			});
 
 			// once audio starts playing, set the state variable to true
@@ -80,6 +85,7 @@ const AudioWaveform = () => {
 					regions[keys[0]].remove();
 				}
 			});
+			
 		}
 	}, [wavesurferObj]);
 
@@ -133,6 +139,11 @@ const AudioWaveform = () => {
 	}
 
 
+    const handleduration=(e)=>{
+		const x=wavesurferObj.getDuration();
+		console.log(x)
+        
+	}
 
 	const handlePlayPause = (e) => {
 		wavesurferObj.playPause();
@@ -272,7 +283,7 @@ const AudioWaveform = () => {
 						</i>
 						Trim
 					</button>
-				</div>
+				</div>x	
 				<div className='right-container'>
 					<div className='volume-slide-container'>
 						<i className='material-icons zoom-icon'>
@@ -303,6 +314,8 @@ const AudioWaveform = () => {
 							onChange={handleVolumeSlider}
 							className='slider volume-slider'
 						/>
+						<button className='  trim'>{durationinsec}s
+					</button>
 					</div>
 				</div>
 			</div>
@@ -312,6 +325,7 @@ const AudioWaveform = () => {
         onClick={handleDownload}
         style={{ margin: "auto" }}
       >
+	     
         <i
           style={{
             fontSize: "1.2em",
