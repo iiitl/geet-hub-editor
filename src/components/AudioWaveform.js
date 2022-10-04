@@ -224,6 +224,20 @@ const AudioWaveform = () => {
       "download.mp3"
     );
   }
+
+  // Styling sliders
+  const labelStyle = {
+      display: "flex",
+      "flex-direction": "column",
+      "align-items": "center",
+      width: "max-content",
+      translate: "0 0.7em",
+  }
+
+  const contStyle = {
+    "margin-left": "-3em",
+    "margin-top": "-0.5em",
+  }
   return (
     <section className="waveform-container">
       <div ref={wavesurferRef} id="waveform" />
@@ -258,27 +272,28 @@ const AudioWaveform = () => {
             Trim
           </button>
         </div>
-        <div className="right-container">
+        <div className="right-container" style={{contStyle}}>
           <div className="volume-slide-container">
-          <label>Zoom</label> &nbsp;
             <i className="material-icons zoom-icon">remove_circle</i>
+            <div className="sliderlabel" style={labelStyle}>
             <input
               type="range"
               min="1"
               max="1000"
               value={zoom}
               onChange={handleZoomSlider}
-              class="slider zoom-slider"
-            />
+              className="slider zoom-slider" />
+          <label className = "volLabels">Zoom</label> 
+           </div>
             <i className="material-icons zoom-icon">add_circle</i>
           </div>
           <div className="volume-slide-container">
-            <label>Volume</label> &nbsp;
             {volume > 0 ? (
               <i className="material-icons">volume_up</i>
-            ) : (
-              <i className="material-icons">volume_off</i>
+              ) : (
+                <i className="material-icons">volume_off</i>
             )}
+            <div className="sliderlabel" style={labelStyle}>
             <input
               type="range"
               min="0"
@@ -288,6 +303,7 @@ const AudioWaveform = () => {
               onChange={handleVolumeSlider}
               className="slider volume-slider"
             />
+                <label className = "volLabels" style={{transform: "translateX(-0.3em)"}}>Volume</label> </div>
           </div>
         </div>
       </div>
