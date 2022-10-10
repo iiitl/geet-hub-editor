@@ -279,7 +279,7 @@ const AudioWaveform = () => {
             <input
               type="range"
               min="1"
-              max="1000"
+              max="250"
               value={zoom}
               onChange={handleZoomSlider}
               className="slider zoom-slider" />
@@ -297,7 +297,7 @@ const AudioWaveform = () => {
             <input
               type="range"
               min="0"
-              max="1"
+              max="1.25"
               step="0.05"
               value={volume}
               onChange={handleVolumeSlider}
