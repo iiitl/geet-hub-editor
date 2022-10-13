@@ -11,7 +11,7 @@ const AudioWaveform = () => {
   const timelineRef = useRef(null);
 
   // fetch file url from the context
-  const { fileURL, setFileURL } = useContext(FileContext);
+  const { fileURL } = useContext(FileContext);
 
   // crate an instance of the wavesurfer
   const [wavesurferObj, setWavesurferObj] = useState();
@@ -228,8 +228,8 @@ const AudioWaveform = () => {
   // Styling sliders
   const labelStyle = {
       display: "flex",
-      "flex-direction": "column",
-      "align-items": "center",
+      "flexDirection": "column",
+      "alignItems": "center",
       width: "max-content",
       translate: "0 0.7em",
   }

@@ -3,11 +3,11 @@ import React from 'react';
 const ToggleButton = ({onChange}) => {
 	return (
 		<>
-			<label class='switch'>
+			<label className='switch'>
 				<input type='checkbox' id='togBtn' onChange={(e) => onChange(e.target.checked)} defaultChecked={true} />
-				<div class='toggle round'>
-					<span class='on'>Dual</span>
-					<span class='off'>Mono</span>
+				<div className='toggle round'>
+					<span className='on'>Dual</span>
+					<span className='off'>Mono</span>
 				</div>
 			</label>
 		</>
