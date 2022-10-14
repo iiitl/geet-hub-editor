@@ -4,7 +4,7 @@ import logo from '../assets/images/logo.png';
 
 const UploadAudio = ({ history }) => {
 	const inputFile = useRef(null);
-	const { fileURL, setFileURL } = useContext(FileContext);
+	const { setFileURL } = useContext(FileContext);
 	const [file, setFile] = useState(null);
 
 	useEffect(() => {
