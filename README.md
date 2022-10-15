@@ -32,7 +32,7 @@ Fork the repository to you GitHub
 While still in your repository, click on the code drop down menu. Now you can either download the zip file and extract it on your local system or copy the https url and use the command git clone <https url> to clone it to a local directory/folder. 
 
 ```bash
-git clone https://github.com/iiitl/geet-hub-editor.git
+git clone https://github.com/<YOUR USERNAME>/geet-hub-editor.git
 ```
 
 # Step 3: Navigate to your local folder
@@ -83,12 +83,15 @@ Use a text editor or IDE to make the changes you planned to the files in your lo
 
 # Step 6: Git Add and Commit your changes
 
-After you make a set of changes, use git add -A or git add . to stage your changes and `git commit -m "DESCRIPTION OF CHANGES"` to commit them.
+After you make a set of changes, use `git add -A` or `git add .` (to stage all your changes) or `git add <fileName>` (to stage the change made in a specific file) and  `git commit -m "DESCRIPTION OF CHANGES"` to commit them.
 
 For example, `commit -m "Instructions on setting up project locally"` for one of my commits.
 
  ```bash
-git add .
+git add . (To stages all your changes)
+                         OR
+git add <fileName> (To stage the changes made in a specific file) 
+
 git commit -m"<Description of changes>"
 ```
 
