@@ -303,7 +303,11 @@ const AudioWaveform = () => {
               onChange={handleVolumeSlider}
               className="slider volume-slider"
             />
-                <label className = "volLabels" style={{transform: "translateX(-0.3em)"}}>Volume</label> </div>
+                <label className = "volLabels" style={{transform: "translateX(-0.3em)"}}>Volume</label>
+              </div>
+              <button className="trim" style={{marginLeft: "20px"}}>
+               {duration+' s'}
+          </button>
           </div>
         </div>
       </div>
