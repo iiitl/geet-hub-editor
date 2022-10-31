@@ -315,7 +315,7 @@ const AudioWaveform = () => {
         title="download"
         className="download"
         onClick={handleDownload}
-        style={{ margin: "auto" }}
+        style={{ margin: "auto", borderRadius: "5px" }}
       >
         <i
           style={{
