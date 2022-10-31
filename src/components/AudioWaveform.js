@@ -305,7 +305,7 @@ const AudioWaveform = () => {
             />
                 <label className = "volLabels" style={{transform: "translateX(-0.3em)"}}>Volume</label>
               </div>
-              <button className="trim" style={{marginLeft: "20px"}}>
+              <button className="trim" style={{marginLeft: "20px", borderRadius: "5px"}}>
                {duration+' s'}
           </button>
           </div>
