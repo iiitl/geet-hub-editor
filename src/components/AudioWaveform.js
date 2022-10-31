@@ -259,11 +259,11 @@ const AudioWaveform = () => {
           <button title="reload" className="controls" onClick={handleReload}>
             <i className="material-icons">replay</i>
           </button>
-          <button className="trim" onClick={handleTrim}>
+          <button className="trim" onClick={handleTrim} style={{borderRadius: "5px"}}>
             <i
               style={{
                 fontSize: "1.2em",
-                color: "white",
+                color: "white"
               }}
               className="material-icons"
             >
